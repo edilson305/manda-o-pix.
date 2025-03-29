@@ -3,33 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manda o Pix!</title>
+    <title>Botão Pix</title>
     <style>
-        body {
-            text-align: center;
-            font-family: Arial, sans-serif;
-            margin-top: 50px;
-        }
-        button {
-            font-size: 20px;
-            padding: 15px 30px;
-            background-color: #ffcc00;
-            border: none;
+        body { text-align: center; margin-top: 50px; font-family: Arial, sans-serif; }
+        button { 
+            background-color: #f7931a; 
+            color: white; 
+            border: none; 
+            padding: 15px 30px; 
+            font-size: 20px; 
+            cursor: pointer; 
             border-radius: 10px;
-            cursor: pointer;
-            font-weight: bold;
         }
-        button:hover {
-            background-color: #ffaa00;
-        }
+        button:hover { background-color: #e67e22; }
     </style>
 </head>
 <body>
-    <h1>Ajude o Dr. Pizzalotto!</h1>
-    <p>Clique no botão abaixo para mandar um pix e salvar um faminto! 🍕</p>
+
+    <h1>Doutor Pizzalotto</h1>
+    <p>Clique no botão para ouvir o pedido!</p>
     
-    <a href="edilson305.github.io/manda-o-pix" target="_blank">
-        <button>🍕 Manda o Pix! 🍕</button>
-    </a>
+    <button onclick="falar()">Manda o Pix!</button>
+
+    <script>
+        function falar() {
+            let msg = new SpeechSynthesisUtterance("Manda o Pix, meu amigo!");
+            msg.lang = "pt-BR"; 
+            speechSynthesis.speak(msg);
+        }
+    </script>
+
 </body>
 </html>
+
